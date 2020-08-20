@@ -1,0 +1,22 @@
+name: "Publish"
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+
+  workflow_dispatch: {}
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: npm run build --if-present
+      - run: npm pack
+      - run: mv *.tgz test.tgz
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: test.tgz
+          path: test.tgz
