@@ -8,5 +8,6 @@
   },
   "keywords": [],
   "author": "Gregor Martynus (https://twitter.com/gr2m)",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": "github:gr2m/npm-publish-to-artifact-action"
 }
